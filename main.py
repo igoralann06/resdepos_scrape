@@ -75,14 +75,14 @@ def scrap_address_and_image(driver: CustomWebDriver):
                         price = ""
                 if(image_url):
                     try:
-                        # responseImage = requests.get(image_url)
-                        # image_type = imghdr.what(None, responseImage.content)
-                        # if responseImage.status_code == 200:
-                        #     img_url = "products/"+current_time+"/images/"+prefix+str(section_id)+'.'+image_type
-                        #     with open(img_url, 'wb') as file:
-                        #         file.write(responseImage.content)
-                        #         download_url = img_url
-                        download_url = "products/"+current_time+"/images/"+prefix+str(section_id)+'.'+"jpg"
+                        responseImage = requests.get(image_url)
+                        image_type = imghdr.what(None, responseImage.content)
+                        if responseImage.status_code == 200:
+                            img_url = "products/"+current_time+"/images/"+prefix+str(section_id)+'.'+image_type
+                            with open(img_url, 'wb') as file:
+                                file.write(responseImage.content)
+                                download_url = img_url
+                        # download_url = "products/"+current_time+"/images/"+prefix+str(section_id)+'.'+"jpg"
                     except Exception as e:
                         print(e)
                 
