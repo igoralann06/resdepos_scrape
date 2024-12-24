@@ -22,7 +22,7 @@ def scrap_address_and_image(driver: CustomWebDriver):
     password_field = driver.find_element(By.ID, "pass")
     
     email_field.send_keys("sabirajafer@gmail.com")
-    password_field.send_keys("Welcome1@3$")
+    password_field.send_keys("Welcome1@3")
     
     password_field.send_keys(Keys.RETURN)
     
